@@ -10,9 +10,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install pytest
+      - name: Set up venv and install pytest
         run: |
-          python3 -m pip install --user pytest
+          python3 -m venv .venv
+          source .venv/bin/activate
+          pip install pytest
 
       - name: Run tests
-        run: python3 -m pytest -v
+        run: |
+          source .venv/bin/activate
+          pytest -v

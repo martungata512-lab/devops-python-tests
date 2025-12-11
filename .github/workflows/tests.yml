@@ -6,17 +6,16 @@ jobs:
   tests:
     runs-on: self-hosted
 
-    steps:
+        steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Python and pytest
+      - name: Install pytest
         run: |
-          sudo apt-get update
-          sudo apt-get install -y python3 python3-pip
-          pip3 install pytest
+          python3 -m pip install --user pytest
 
       - name: Run tests
-        run: pytest -v
+        run: python3 -m pytest -v
+
 
 # trigger self-hosted runner

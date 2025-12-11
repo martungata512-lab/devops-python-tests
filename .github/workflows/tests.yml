@@ -6,7 +6,7 @@ jobs:
   tests:
     runs-on: self-hosted
 
-        steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -16,6 +16,3 @@ jobs:
 
       - name: Run tests
         run: python3 -m pytest -v
-
-
-# trigger self-hosted runner
